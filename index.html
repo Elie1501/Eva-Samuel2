@@ -2,255 +2,51 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
-    <title>Invitation - Eva & Samuel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eva & Samuel - 12 Mai 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --rose-prestige: #d4a5a5;
-            --white-cream: #fffdf9;
-            --text-gray: #5a5a5a;
-            --text-dark: #333333;
-            --line-color: rgba(212, 165, 165, 0.4);
-        }
-        * { box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; width: 100%; min-height: 100%; background-color: var(--white-cream); font-family: 'Cormorant Garamond', serif; scroll-behavior: smooth; }
-
-        #fixed-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('fond.JPG') repeat; background-size: 250px; opacity: 0.25; z-index: 0; pointer-events: none; }
-
-        .navbar { position: fixed; top: 0; width: 100%; height: 60px; background-color: rgba(255, 253, 249, 0.98); display: flex; justify-content: center; align-items: center; z-index: 1000; border-bottom: 1px solid var(--line-color); backdrop-filter: blur(5px); }
-        .nav-links { display: flex; gap: 10px; list-style: none; padding: 0; margin: 0; }
-        .nav-links a { text-decoration: none; color: var(--text-gray); text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 1px; font-weight: 700; }
-
-        .page-wrapper { position: relative; z-index: 10; padding: 80px 10px 40px 10px; display: flex; flex-direction: column; align-items: center; }
-        .main-frame { width: 100%; max-width: 600px; text-align: center; }
-
-        .names-inline { font-family: 'Great Vibes', cursive; color: var(--rose-prestige); font-size: clamp(2.5rem, 8vw, 3.5rem); margin: 5px 0 0 0; }
-        .names-hebrew { font-family: 'Cormorant Garamond', serif; color: var(--rose-prestige); font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; direction: rtl; }
-
-        .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--text-dark); margin-bottom: 5px; }
-
-        .hero-photo, .section-photo { width: 100%; max-width: 500px; border: 2px solid white; padding: 5px; background: white; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-
-        .sub-text { font-size: 1.2rem; font-style: italic; color: var(--text-gray); display: block; margin-bottom: 10px; }
-        .date-block { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; line-height: 1.4; margin-bottom: 15px; }
-        .date-line { font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dark); }
-        .venue-name { font-size: 1.4rem; font-weight: 700; color: var(--rose-prestige); margin-top: 5px; display: block; }
-        .address-text { font-style: italic; font-size: 1rem; color: var(--text-gray); }
-        .highlight-text { font-size: 0.95rem; color: var(--rose-prestige); font-style: italic; margin-top: 10px; display: block; }
-
-        .event-card { background-color: rgba(255, 255, 255, 0.95); border: 1px solid var(--line-color); padding: 30px 15px; margin: 20px 0; width: 100%; position: relative; }
-
-        /* Boutons d'action */
-        .action-btns { display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap; width: 100%; }
-        .btn-mini {
-            text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.65rem;
-            text-transform: uppercase; letter-spacing: 1px; color: var(--rose-prestige);
-            border: 1px solid var(--rose-prestige); padding: 8px 12px; border-radius: 4px; transition: 0.3s;
-            cursor: pointer; background: transparent;
-        }
-        .btn-mini:hover { background: var(--rose-prestige); color: white; }
-
-        /* Style des images agrandies et sans fond */
-        .illust-img {
-            width: 100px; /* Agrandissement */
-            height: auto;
-            margin: 0 auto 15px;
-            display: block;
-            mix-blend-mode: multiply; /* Supprime le fond blanc si l'image est sur fond blanc */
-        }
-        .bagues-img {
-            width: 120px; /* Agrandissement spécifique bagues */
-            margin-bottom: 25px;
-        }
-        .hebreu-img { width: 100%; max-width: 400px; margin: 0 auto 20px; display: block; filter: sepia(0.2); mix-blend-mode: multiply; }
-
-        .family-grid { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 25px; text-align: center; border-bottom: 1px solid var(--line-color); padding-bottom: 20px; }
-        .family-col { flex: 1; min-width: 0; }
-        .family-col h3 { font-family: 'Great Vibes', cursive; color: var(--rose-prestige); font-size: 1.4rem; margin-bottom: 15px; font-weight: normal; }
-        .family-col p { font-size: 0.85rem; margin: 5px 0; color: var(--text-dark); line-height: 1.3; word-wrap: break-word; font-weight: 400; }
-        .family-spacer { margin-bottom: 15px; display: block; }
-
-        .memorial-card {
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 4px;
-            padding: 40px 25px;
-            margin: 30px auto 10px;
-            max-width: 90%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .memorial-card p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.6; color: var(--text-dark); font-style: italic; margin: 0; }
-
-        .wedding-card { background: white; padding: 25px 20px; margin-top: 30px; border: 1px solid var(--line-color); text-align: left; }
-        .btn-action { background: var(--text-dark); color: white; border: none; padding: 16px; width: 100%; text-transform: uppercase; font-weight: 700; cursor: pointer; letter-spacing: 2px; font-family: 'Montserrat', sans-serif; transition: 0.3s; }
-        .btn-action:hover { background: var(--rose-prestige); }
+        :root { --rose-signature: #e2b4b4; --rose-pale: rgba(226, 180, 180, 0.25); --white-soft: rgba(255, 255, 255, 0.95); }
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; font-family: 'Cormorant Garamond', serif; background-color: #000; overflow: hidden; }
+        .background-hero { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('bisous.JPG') no-repeat center 20%; background-size: cover; transform: scale(1.1); z-index: 1; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.35); z-index: 2; }
+        .main-container { position: relative; z-index: 10; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 20px; }
+        .names { font-family: 'Great Vibes', cursive; font-size: clamp(4rem, 14vw, 8rem); color: var(--rose-signature); text-shadow: 2px 2px 15px rgba(0,0,0,0.6); margin: 0; }
+        .date-text { font-weight: 700; letter-spacing: 6px; text-transform: uppercase; margin: 10px 0 40px 0; font-size: clamp(1.3rem, 5vw, 1.8rem); text-shadow: 1px 1px 10px rgba(0,0,0,0.5); }
+        .countdown { display: flex; gap: clamp(8px, 2vw, 15px); margin-bottom: 55px; }
+        .unit { display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--rose-pale); border: 1px solid rgba(255,255,255,0.2); width: clamp(70px, 18vw, 90px); height: clamp(75px, 20vw, 95px); border-radius: 5px; backdrop-filter: blur(6px); }
+        .unit span { font-size: clamp(1.5rem, 5vw, 2.2rem); font-weight: 700; }
+        .unit label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
+        .next-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--white-soft); color: white; padding: 16px 50px; font-size: 1rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; cursor: pointer; transition: 0.2s; backdrop-filter: blur(3px); text-decoration: none; }
+        .next-btn:active { transform: scale(0.98); background: var(--white-soft); color: #000; }
     </style>
 </head>
 <body>
-
-<div id="fixed-bg"></div>
-
-<nav class="navbar">
-    <ul class="nav-links">
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#mairie">Mairie</a></li>
-        <li><a href="#houppa">Houppa</a></li>
-        <li><a href="#rsvp">Présence</a></li>
-    </ul>
-</nav>
-
-<div class="page-wrapper" id="accueil">
-    <div class="main-frame">
-        <img src="logoES.png" alt="Logo" style="width: 70px;">
-
-        <img src="nez.JPG" alt="Eva & Samuel" class="hero-photo">
-
-        <div class="event-card" id="mairie">
-            <img src="voiture.png" alt="Voiture" class="illust-img">
-
-            <h2 class="section-title">Cérémonie Civile</h2>
-            <div class="names-inline">Eva & Samuel</div>
-            <span class="sub-text">Se diront « oui »</span>
-
-            <div class="date-block">
-                <span class="date-line">Mercredi 6 Mai 2026</span><br>
-                <span>à 14h30 précises</span>
-            </div>
-
-            <div class="info-block">
-                <span class="venue-name">Mairie de Sarcelles</span>
-                <span class="address-text">3 rue de la Résistance, 95200 Sarcelles</span>
-
-                <div class="action-btns">
-                    <a href="https://waze.com/ul?q=Mairie+de+Sarcelles+3+rue+de+la+resistance+95200+Sarcelles" target="_blank" class="btn-mini">Itinéraire Waze</a>
-                    <button onclick="downloadICS('Mariage Eva & Samuel - Mairie', 'Cérémonie civile suivie d\'un vin d\'honneur.', '3 rue de la Résistance, 95200 Sarcelles', '20260506T143000', '20260506T160000')" class="btn-mini">Ajouter au calendrier</button>
-                </div>
-
-                <span class="highlight-text">Un vin d'honneur suivra la cérémonie au :</span>
-                <span class="venue-name" style="font-size: 1.2rem;">Centre Bérechit</span>
-                <span class="address-text">74 Avenue Paul Valéry, 95200 Sarcelles</span>
-
-                <div class="action-btns">
-                    <a href="https://waze.com/ul?q=Centre+Berechit+74+Avenue+Paul+Valery+95200+Sarcelles" target="_blank" class="btn-mini">Itinéraire Waze</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="event-card" id="houppa">
-            <img src="baguess.png" alt="Alliances" class="illust-img bagues-img">
-
-            <img src="hebreu.png" alt="Bénédiction" class="hebreu-img">
-
-            <div class="family-grid">
-                <div class="family-col">
-                    <h3>Famille de la Kala</h3>
-                    <p>Madame Jacqueline Levy</p>
-                    <p>Madame Huguette Soulat</p>
-                    <div class="family-spacer"></div>
-                    <p>Monsieur et Madame<br>Stéphane Levy</p>
-                </div>
-
-                <div class="family-col">
-                    <h3>Famille du Hatan</h3>
-                    <p>Madame Simone Msika</p>
-                    <div class="family-spacer" style="margin-bottom: 32px;"></div>
-                    <p>Monsieur et Madame<br>Georges Uzan</p>
-                </div>
-            </div>
-
-            <div class="names-inline">Eva & Samuel</div>
-            <div class="names-hebrew">הוה & שמואל</div>
-
-            <p style="margin-bottom: 20px; font-style: italic; font-size: 1rem;">
-                Ont l’immense joie de vous faire part de la Houppa de leurs enfants et petits-enfants
-            </p>
-
-            <div class="date-block">
-                <span class="date-line">Mardi 12 Mai 2026</span><br>
-                <span>à 17h30</span>
-            </div>
-
-            <div class="info-block">
-                <span class="venue-name">Le White</span>
-                <span class="address-text">68 rue Louis Ampère, 93330 Neuilly sur Marne</span>
-
-                <div class="action-btns">
-                    <a href="https://waze.com/ul?q=Le+White+68+rue+Louis+Ampere+93330+Neuilly+sur+Marne" target="_blank" class="btn-mini">Itinéraire Waze</a>
-                    <button onclick="downloadICS('Mariage Eva & Samuel - Houppa', 'Célébration de la Houppa suivie de la soirée.', '68 rue Louis Ampère, 93330 Neuilly sur Marne', '20260512T173000', '20260513T040000')" class="btn-mini">Ajouter au calendrier</button>
-                </div>
-            </div>
-
-            <div class="memorial-card">
-                <p>
-                    Une pensée très émue pour nos grands-parents<br>
-                    <strong>Roger Benoun Levy, Michel Soulat</strong>,<br>
-                    <strong>Claude Nessim Msika</strong>,<br>
-                    <strong>Thérèse Esther, Jacques Isaac Uzan</strong><br>
-                    qui nous manqueront tant en ce jour unique.<br><br>
-                    Que leurs bénédictions illuminent notre vie.
-                </p>
-            </div>
-        </div>
-
-        <img src="verre.JPG" alt="Célébration" class="section-photo">
-
-        <div class="wedding-card" id="rsvp">
-            <h2 class="section-title" style="text-align: center; font-size: 1.6rem;">Confirmation</h2>
-            <form id="rsvpForm">
-                <input type="text" name="nom" required placeholder="Nom & Prénom" style="margin-bottom:15px; width:100%; padding:12px; border:1px solid #ddd; font-family: inherit;">
-
-                <select name="pres_m" id="pres_m" onchange="toggleM()" required style="margin-bottom:15px; width:100%; padding:12px; border:1px solid #ddd; font-family: inherit;">
-                    <option value="" disabled selected>Présence Mairie & Vin d'honneur ?</option>
-                    <option value="oui">OUI</option>
-                    <option value="non">NON</option>
-                </select>
-                <div id="sec_m" style="display:none; margin-bottom: 15px; background: #fdfaf6; padding: 10px;">
-                    <input type="number" name="ad_m" min="1" value="1" placeholder="Nombre d'adultes" style="width:100%; padding:10px; border:1px solid #ddd;">
-                </div>
-
-                <select name="pres_h" id="pres_h" onchange="toggleH()" required style="margin-bottom:15px; width:100%; padding:12px; border:1px solid #ddd; font-family: inherit;">
-                    <option value="" disabled selected>Présence Houppa & Soirée ?</option>
-                    <option value="oui">OUI</option>
-                    <option value="non">NON</option>
-                </select>
-                <div id="sec_h" style="display:none; margin-bottom: 15px; background: #fdfaf6; padding: 10px;">
-                    <input type="number" name="ad_h" min="1" value="1" placeholder="Nombre d'adultes" style="width:100%; padding:10px; border:1px solid #ddd;">
-                </div>
-
-                <button type="submit" id="subBtn" class="btn-action">Envoyer ma réponse</button>
-            </form>
-        </div>
+<div class="background-hero"></div>
+<div class="overlay"></div>
+<div class="main-container">
+    <h1 class="names">Eva & Samuel</h1>
+    <p class="date-text">12 Mai 2026</p>
+    <div class="countdown">
+        <div class="unit"><span id="days">00</span><label>Jours</label></div>
+        <div class="unit"><span id="hours">00</span><label>Heures</label></div>
+        <div class="unit"><span id="mins">00</span><label>Min</label></div>
+        <div class="unit"><span id="secs">00</span><label>Sec</label></div>
     </div>
+    <a href="invitation.html" class="next-btn">Entrer</a>
 </div>
-
 <script>
-    function toggleM() { document.getElementById('sec_m').style.display = (document.getElementById('pres_m').value === 'oui') ? 'block' : 'none'; }
-    function toggleH() { document.getElementById('sec_h').style.display = (document.getElementById('pres_h').value === 'oui') ? 'block' : 'none'; }
-
-    function downloadICS(title, description, location, startTime, endTime) {
-        const icsData = [
-            "BEGIN:VCALENDAR",
-            "VERSION:2.0",
-            "PROID:-//EvaSamuel//WeddingInvitation//FR",
-            "BEGIN:VEVENT",
-            "DTSTART:" + startTime,
-            "DTEND:" + endTime,
-            "SUMMARY:" + title,
-            "DESCRIPTION:" + description,
-            "LOCATION:" + location,
-            "END:VEVENT",
-            "END:VCALENDAR"
-        ].join("\r\n");
-
-        const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
-        const link = document.createElement("a");
-        link.href = window.URL.createObjectURL(blob);
-        link.setAttribute("download", title + ".ics");
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+    const weddingDate = new Date("May 12, 2026 15:00:00").getTime();
+    function update() {
+        const now = new Date().getTime();
+        const diff = weddingDate - now;
+        if (diff <= 0) return;
+        document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+        document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+        document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+        document.getElementById("secs").innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
     }
+    setInterval(update, 1000); update();
 </script>
-
 </body>
 </html>
